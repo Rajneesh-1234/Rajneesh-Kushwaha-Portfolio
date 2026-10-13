@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>RAJNEESH KUSHWAHA JAVA - FULL STACK DEVELOPER</title>
+    <meta name="description" content="Rajneesh Kushwaha - Full-Stack Java Developer with experience at HCLTech and Siemens, building Spring Boot, React and Generative AI applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rajneesh Kushwaha - Full-Stack Java Developer | Generative AI">
+    <meta property="og:description" content="Experience at HCLTech and Siemens. Spring Boot, React, Python, RAG and Generative AI projects.">
+    <meta property="og:url" content="https://rajneesh-kushwaha-portfolio.netlify.app/">
+    <meta property="og:image" content="https://rajneesh-kushwaha-portfolio.netlify.app/Images/RAJNEESH%20.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -12,11 +19,65 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="CSS/blue.css" id="colorcss">
     <link rel="stylesheet" href="CSS/contact.css" id="contactform">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/animations.css">
+    <link rel="stylesheet" href="CSS/features.css">
+    <link rel="stylesheet" href="CSS/ai-lab.css">
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/contact-form.css">
     <link rel="icon" href="Images/RAJNEESH .jpeg" type="image/x-icon">
 </head>
 <body oncontextmenu="return false">
+
+  <div id="scroll-progress"></div>
+
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <div class="pl-photo"><img src="Images/RAJNEESH .jpeg" alt=""></div>
+      <span class="pl-name">RAJNEESH KUSHWAHA</span>
+      <span class="pl-line"></span>
+      <p>Full-Stack &middot; Generative AI</p>
+      <div class="pl-progress" aria-hidden="true"><span id="pl-bar"></span></div>
+      <span id="pl-percent" class="pl-percent" aria-hidden="true">0%</span>
+      <button id="pl-skip" class="pl-skip" type="button">Skip intro</button>
+    </div>
+  </div>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <button id="showcase-btn" class="dock-btn" type="button" aria-label="Play auto showcase" title="Auto showcase (for screen recording)">
+    <i class="fa-solid fa-play"></i>
+  </button>
+  <button id="cmdk-toggle" class="dock-btn" type="button" aria-label="Open smart search" title="Smart search (Ctrl+K)">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+  <div id="cmdk" hidden>
+    <div class="cmdk-box" role="dialog" aria-label="Smart search">
+      <input id="cmdk-input" type="text" placeholder="Search sections, projects, actions...  (Ctrl+K)" aria-label="Search">
+      <ul id="cmdk-list"></ul>
+    </div>
+  </div>
+  <button id="chat-toggle" class="dock-btn" type="button" aria-label="Open AI assistant" title="Ask my AI assistant">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+  <div id="chat-panel" hidden>
+    <div class="chat-head">
+      <span><i class="fa-solid fa-robot"></i> Ask Rajneesh's AI</span>
+      <button id="chat-close" type="button" aria-label="Close assistant"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="chat-messages" aria-live="polite"></div>
+    <div id="chat-chips"></div>
+    <form id="chat-form" autocomplete="off">
+      <input id="chat-input" type="text" placeholder="Ask about experience, projects, skills..." aria-label="Your question">
+      <button type="button" id="chat-mic" aria-label="Speak your question" title="Voice input"><i class="fa-solid fa-microphone"></i></button>
+      <button type="button" id="chat-speak" aria-label="Read answers aloud" title="Read answers aloud"><i class="fa-solid fa-volume-high"></i></button>
+      <button type="submit" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
 
   <div class="scroll-button">
     <a href="#top"><i class="fas fa-circle-up fa-beat"></i></a>
@@ -26,6 +87,8 @@
     <source src="BG Video/Space BG.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
+  <canvas id="constellation" aria-hidden="true"></canvas>
 
   <div id="video-content">
 
@@ -51,13 +114,16 @@
                             <a class="nav-link hd-txt" href="#sklst">SkillSet</a>
                         </li>
                         <li class="nav-item mr-5">
+                            <a class="nav-link hd-txt" href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item mr-5">
                             <a class="nav-link hd-txt" href="https://certification-rajneesh-kushwaha.netlify.app/" target="_blank">Certifications</a>
                         </li>
                         <li class="nav-item mr-5">
                             <a class="nav-link hd-txt" href="#prjct">Projects</a>
                         </li>
                         <li class="nav-item mr-5">
-                            <a class="nav-link hd-txt" href="Skillset/RAJNEESH KUSHWAHA RESUME(20-06-2025).pdf" target="_blank">Resume</a>
+                            <a class="nav-link hd-txt" href="Skillset/RAJNEESH KUSHWAHA RESUME-1.pdf" target="_blank">Resume</a>
                         </li>
                         <li class="nav-item mr-5">
                             <a class="nav-link hd-txt" href="#cntct">Contact</a>
@@ -98,30 +164,217 @@
                         </div>
                           <h3 data-text="FULLSTACK" class="designation1">FULLSTACK</h3>
                           <h3 data-text="DEVELOPER" class="designation2">DEVELOPER</h3>
+                          <p class="typed-line"><span id="typed"></span></p>
                       </div>
                   </div>
               </div>
           </div>
             <p style="text-align: justify;">
-                Aspiring Full-Stack Java Developer and final-year B.Tech student
-                in Information Technology with a strong foundation in software engineering
-                principles, object-oriented programming, and system design. Skilled in Core
-                and Advanced Java, Data Structures and Algorithms, and database management 
-                systems, with hands-on experience in developing scalable and high-performance
-                web applications. Proficient in frontend technologies such as HTML, CSS, JavaScript, 
-                Bootstrap, and React.js, along with backend development using Java, Spring Boot, JDBC,
-                and MySQL. Experienced in building RESTful APIs, implementing authentication 
-                and session management, and working with microservices-based architecture.
-                Developed multiple real-world projects including an AI-driven hiring platform (HireSense),
-                an e-commerce application (GadgetHub), and an online voting system, demonstrating the ability
-                to design secure, responsive, and user-centric applications. Strong understanding of clean code
-                practices, debugging, performance optimization, and version control using Git and GitHub. Solved
-                500+ algorithmic problems across platforms like LeetCode, CodeChef, and GeeksforGeeks, showcasing 
-                strong analytical thinking and problem-solving capabilities.
-                A highly motivated and adaptable learner with a passion for building innovative solutions and staying 
-                updated with emerging technologies. Seeking opportunities to leverage technical skills, gain industry
-                experience, and contribute effectively to dynamic and growth-oriented development teams.
+                Full-Stack Java Developer and B.Tech graduate in Artificial Intelligence and Machine Learning,
+                <strong>with industry experience at HCLTech and Siemens</strong>. Strong foundation in
+                object-oriented programming, data structures and algorithms, DBMS, and system design, with
+                hands-on experience building scalable, high-performance web applications. Skilled in Java, Spring
+                Boot, Spring MVC, Spring Data JPA, JDBC, MySQL, REST APIs, and microservices on the backend, and
+                HTML, CSS, JavaScript, Bootstrap, and React.js on the frontend. Worked as an Automation Engineer at
+                HCLTech on the LIMS/ESP project using TypeScript and WebdriverIO, and currently builds Generative AI
+                solutions at Siemens using Python, RAG, and vector databases. Completed a Java Developer Internship
+                at Sharma Computer Academy, contributing to
+                HireSense, an AI-driven resume screening platform. Built real-world projects including GadgetHub
+                (e-commerce), BlogHub (blogging platform), and an Online Voting application. IBM-certified in Java
+                Fundamentals, with 500+ algorithmic problems solved across LeetCode, CodeChef, HackerRank, and
+                GeeksforGeeks, and 15+ first-place wins in coding and web development competitions. A quick,
+                adaptable learner who values clean code, debugging, and agile teamwork, and enjoys turning ideas
+                into reliable, user-centric software.
             </p>
+            <div class="cta-row">
+                <a class="cta-btn" href="Skillset/RAJNEESH%20KUSHWAHA%20RESUME-1.pdf" download>
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+                <a class="cta-btn" href="#cntct"><i class="fa-solid fa-handshake"></i> Hire Me</a>
+                <a class="cta-btn" href="#ai-lab"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Job Fit</a>
+                <a class="cta-btn" href="#" data-open-chat><i class="fa-solid fa-robot"></i> Ask My AI</a>
+                <a class="cta-btn" href="https://www.linkedin.com/in/rajneesh-kushwaha-02a787276" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <section class="stats" id="stats">
+            <div class="stat"><i class="fa-solid fa-building"></i><h3 data-count="2">0</h3><p>Companies Worked</p></div>
+            <div class="stat"><i class="fa-solid fa-code"></i><h3 data-count="500" data-suffix="+">0</h3><p>Problems Solved</p></div>
+            <div class="stat"><i class="fa-solid fa-trophy"></i><h3 data-count="15" data-suffix="x">0</h3><p>1st Place Wins</p></div>
+            <div class="stat"><i class="fa-solid fa-diagram-project"></i><h3 data-count="15" data-suffix="+">0</h3><p>Projects Built</p></div>
+            <div class="stat"><i class="fa-solid fa-graduation-cap"></i><h3 data-count="8.44" data-decimals="2">0</h3><p>B.Tech CGPA</p></div>
+        </section>
+
+        <section class="marquee" aria-label="Technologies I work with">
+            <p class="marquee-title">Technologies I work with</p>
+            <div class="marquee-viewport"><div class="marquee-track"></div></div>
+        </section>
+
+        <section id="experience">
+          <h2>Experience</h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-industry"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">Currently Working</span>
+                <h4>SIEMENS</h4>
+                <div class="tl-project">
+                  <h5>CRISP AI</h5>
+                  <p>Generative AI application built with Python, using Retrieval-Augmented Generation (RAG) over a vector database with a Streamlit interface.</p>
+                  <div class="tl-tags"><span>Python</span><span>Generative AI</span><span>RAG</span><span>Streamlit</span><span>Vector DB</span></div>
+                </div>
+                <div class="tl-project">
+                  <h5>Personal AI Manager</h5>
+                  <p>Generative AI application on the same stack, extended with an MCP service, a FastAPI backend, and an HTML, CSS, and JavaScript frontend.</p>
+                  <div class="tl-tags"><span>Python</span><span>Generative AI</span><span>RAG</span><span>Streamlit</span><span>Vector DB</span><span>MCP</span><span>FastAPI</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-building"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">HCLTech</span>
+                <h4>Automation Engineer &mdash; HCLTech</h4>
+                <div class="tl-project">
+                  <h5>LIMS / ESP</h5>
+                  <p>Worked as an Automation Engineer on the LIMS/ESP project, automating UI and API testing with TypeScript, WebdriverIO, Axios, and Postman.</p>
+                  <div class="tl-tags"><span>TypeScript</span><span>WebdriverIO</span><span>Axios</span><span>Postman</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-laptop-code"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">Aug 2025 &ndash; Oct 2025</span>
+                <h4>Java Developer Intern &mdash; Sharma Computer Academy</h4>
+                <p>Contributed to HireSense, an AI-driven resume screening platform. Developed and optimized backend services with Advanced Java and MySQL, designed business logic and data integration, improved API performance, and integrated AI modules using Servlets and JDBC.</p>
+                <div class="tl-tags"><span>Advanced Java</span><span>Servlets</span><span>JDBC</span><span>MySQL</span><span>AI Integration</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education &amp; Certification</h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">2022 &ndash; 2026</span>
+                <h4>B.Tech &mdash; Artificial Intelligence &amp; Machine Learning</h4>
+                <p>Technocrats Institute of Technology and Science, Bhopal, Madhya Pradesh. CGPA: 8.44/10.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-certificate"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">Certification</span>
+                <h4>IBM Certified &mdash; Java Fundamentals</h4>
+                <p>Certified professional in Java fundamentals by IBM.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-award"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">Certification</span>
+                <h4>ServiceNow Certified</h4>
+                <p>Earned a ServiceNow certification. View the certificate on GitHub.</p>
+                <a class="tl-link" href="https://github.com/Rajneesh-1234/SERVICENOW-CERTIFICATE" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-github"></i> View Certificate
+                </a>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-school"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">2021 &ndash; 2022</span>
+                <h4>Senior Secondary (XII) &mdash; Science</h4>
+                <p>Government Higher Secondary Model School, Ramnagar, Madhya Pradesh. 88.40%.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"><i class="fa-solid fa-school"></i></span>
+              <div class="tl-card">
+                <span class="tl-date">2019 &ndash; 2020</span>
+                <h4>Secondary (X)</h4>
+                <p>Government High School Mankahari, Ramnagar, Madhya Pradesh. 93.25%.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project" id="featured">
+          <div class="content">
+                        <div class="title"><h2 style="font-size: 35px;">Featured Projects</h2></div>
+                        <div class="project-filters" role="group" aria-label="Filter featured projects">
+                            <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All work</button>
+                            <button class="project-filter" type="button" data-filter="ai" aria-pressed="false">Generative AI</button>
+                            <button class="project-filter" type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+                            <button class="project-filter" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+                        </div>
+                        <p id="featured-project-status" class="project-filter-status" aria-live="polite">Showing all featured projects.</p>
+            <div class="boxes row">
+                            <div class="box col-md-5 col-11" data-project-category="ai">
+                                <div class="icon"><i class="fa-solid fa-brain"></i></div>
+                                <div class="topic">CRISP AI</div>
+                                <p class="txt2">Generative AI application developed at Siemens, combining Python, retrieval-augmented generation, a vector database, and a Streamlit interface.</p>
+                                <div class="tech-stack"><p class="tools">Python</p><p class="tools">RAG</p><p class="tools">Vector DB</p><p class="tools">Streamlit</p></div>
+                                <span class="project-context">Siemens project</span>
+                            </div>
+                            <div class="box col-md-5 col-11" data-project-category="ai">
+                                <div class="icon"><i class="fa-solid fa-robot"></i></div>
+                                <div class="topic">Personal AI Manager</div>
+                                <p class="txt2">Generative AI application at Siemens, extended with an MCP service, a FastAPI backend, and a custom HTML, CSS, and JavaScript interface.</p>
+                                <div class="tech-stack"><p class="tools">Python</p><p class="tools">RAG</p><p class="tools">MCP</p><p class="tools">FastAPI</p><p class="tools">Vector DB</p></div>
+                                <span class="project-context">Siemens project</span>
+                            </div>
+                            <div class="box col-md-5 col-11" data-project-category="automation">
+                                <div class="icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+                                <div class="topic">LIMS / ESP Test Automation</div>
+                                <p class="txt2">UI and API test automation delivered at HCLTech for the LIMS/ESP project using TypeScript, WebdriverIO, Axios, and Postman.</p>
+                                <div class="tech-stack"><p class="tools">TypeScript</p><p class="tools">WebdriverIO</p><p class="tools">Axios</p><p class="tools">Postman</p></div>
+                                <span class="project-context">HCLTech project</span>
+                            </div>
+                            <div class="box col-md-5 col-11" data-project-category="ai">
+                <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="topic">HireSense</div>
+                <p class="txt2">AI-driven resume screening platform built during my internship. Backend services, business logic, and AI module integration with optimized API performance.</p>
+                <div class="tech-stack"><p class="tools">Advanced Java</p><p class="tools">Servlets</p><p class="tools">JDBC</p><p class="tools">MySQL</p></div>
+              </div>
+              <div class="box col-md-5 col-11" data-project-category="fullstack">
+                <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="topic">GadgetHub</div>
+                <p class="txt2">E-commerce application with secure payments, real-time order tracking, reviews, and personalized recommendations. Responsive and built for high traffic.</p>
+                <div class="tech-stack"><p class="tools">Java</p><p class="tools">JEE</p><p class="tools">JDBC</p><p class="tools">JSP</p><p class="tools">MySQL</p><p class="tools">Bootstrap</p></div>
+              </div>
+              <div class="box col-md-5 col-11" data-project-category="fullstack">
+                <div class="icon"><i class="fa-solid fa-blog"></i></div>
+                <div class="topic">BlogHub</div>
+                <p class="txt2">Full-stack blogging platform with user authentication, blog creation and management, a commenting system, and real-time content updates.</p>
+                <div class="tech-stack"><p class="tools">Spring Boot</p><p class="tools">Spring REST</p><p class="tools">MySQL</p><p class="tools">Bootstrap</p></div>
+              </div>
+              <div class="box col-md-5 col-11" data-project-category="fullstack">
+                <div class="icon"><i class="fa-solid fa-check-to-slot"></i></div>
+                <div class="topic">Online Voting Application</div>
+                <p class="txt2">Secure voter authentication, real-time vote casting and tracking, and transparent result generation, designed for high traffic.</p>
+                <div class="tech-stack"><p class="tools">Spring Boot</p><p class="tools">Spring Data JPA</p><p class="tools">REST API</p><p class="tools">MySQL</p></div>
+              </div>
+              <div class="box col-md-5 col-11" data-project-category="fullstack">
+                <div class="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="topic">Swift Cart (E-commerce Application)</div>
+                <p class="txt2">Full-stack e-commerce application with a React frontend and a Spring Boot REST API backend, backed by MySQL.</p>
+                <div class="tech-stack"><p class="tools">Spring</p><p class="tools">Spring Boot</p><p class="tools">REST API</p><p class="tools">React</p><p class="tools">MySQL</p></div>
+              </div>
+              <div class="box col-md-5 col-11" data-project-category="fullstack">
+                <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="topic">Krishi Mandal (Farming Application)</div>
+                <p class="txt2">Farming application built with a React frontend and a Spring Boot REST API backend to support farmers.</p>
+                <div class="tech-stack"><p class="tools">Spring</p><p class="tools">Spring Boot</p><p class="tools">REST API</p><p class="tools">React</p></div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="sklst"></section><br><br><br>
@@ -201,6 +454,10 @@
                                 <p>C++</p>
                             </div>
                             <div class="skill">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" class="rounded-circle skill-img-bg" alt="">
+                                <p>C#</p>
+                            </div>
+                            <div class="skill">
                                 <img src="Skillset/javascript.png"class="rounded-circle shadow">
                                 <p>Javascript</p>
                             </div>
@@ -215,6 +472,14 @@
                             <div class="skill">
                                 <img src="Skillset/autoit.png" class="rounded-circle shadow">
                                 <p>AutoIt</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/sql.png" class="rounded-circle shadow">
+                                <p>SQL</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-robot skill-icon"></i>
+                                <p>Generative AI</p>
                             </div>
                         </div>
                     </div>
@@ -299,6 +564,10 @@
                                 <img src="Skillset/postman.png" class="rounded-circle shadow">
                                 <p>Postman</p>
                             </div>
+                            <div class="skill">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg" class="rounded-circle skill-img-bg" alt="">
+                                <p>Maven</p>
+                            </div>
                             
                         </div>
                     </div>
@@ -370,6 +639,162 @@
                             <div class="skill">
                                 <img src="Skillset/selenium.png" class="rounded-circle shadow">
                                 <p>Selenium</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-robot skill-icon"></i>
+                                <p>Generative AI</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-rotate skill-icon"></i>
+                                <p>Agile</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <p class="skillset-topic">Databases</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <img src="Skillset/mysql.png" class="rounded-circle shadow">
+                                <p>MySQL</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/sql.png" class="rounded-circle shadow">
+                                <p>SQL</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/jdbc1.png" class="rounded-circle shadow">
+                                <p>JDBC</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <p class="skillset-topic">Spring Ecosystem & APIs</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <img src="Skillset/spring.png" class="rounded-circle shadow">
+                                <p>Spring Core</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/spring.png" class="rounded-circle shadow">
+                                <p>Spring Boot</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/spring.png" class="rounded-circle shadow">
+                                <p>Spring MVC</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/spring.png" class="rounded-circle shadow">
+                                <p>Spring Data JPA</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-plug skill-icon"></i>
+                                <p>REST APIs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <p class="skillset-topic">AI & Machine Learning</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <i class="fa-solid fa-brain skill-icon"></i>
+                                <p>Artificial Intelligence</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-microchip skill-icon"></i>
+                                <p>Machine Learning</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-robot skill-icon"></i>
+                                <p>Generative AI</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-wand-magic-sparkles skill-icon"></i>
+                                <p>AI Integration</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <p class="skillset-topic">Generative AI Stack</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <img src="Skillset/python.png" class="rounded-circle shadow">
+                                <p>Python</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-book-open skill-icon"></i>
+                                <p>RAG</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-database skill-icon"></i>
+                                <p>Vector DB</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-server skill-icon"></i>
+                                <p>MCP</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-bolt skill-icon"></i>
+                                <p>FastAPI</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-layer-group skill-icon"></i>
+                                <p>Streamlit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <p class="skillset-topic">Test Automation</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <img src="Skillset/typescript.png" class="rounded-circle shadow">
+                                <p>TypeScript</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-vial skill-icon"></i>
+                                <p>WebdriverIO</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-network-wired skill-icon"></i>
+                                <p>Axios</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/postman.png" class="rounded-circle shadow">
+                                <p>Postman</p>
+                            </div>
+                            <div class="skill">
+                                <img src="Skillset/selenium.png" class="rounded-circle shadow">
+                                <p>Selenium</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <p class="skillset-topic">Soft Skills</p>
+                        <div class="skills">
+                            <div class="skill">
+                                <i class="fa-solid fa-shuffle skill-icon"></i>
+                                <p>Adaptability</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-lightbulb skill-icon"></i>
+                                <p>Problem-Solving</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-people-group skill-icon"></i>
+                                <p>Teamwork</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-comments skill-icon"></i>
+                                <p>Communication</p>
+                            </div>
+                            <div class="skill">
+                                <i class="fa-solid fa-bug skill-icon"></i>
+                                <p>Debugging</p>
                             </div>
                         </div>
                     </div>
@@ -491,6 +916,222 @@
             </div>
         </section>
 
+        <section id="services">
+          <h2>What I Can Build For You</h2>
+          <p class="ai-sub">Pick an area to see the stack I use. Every card links to the contact form.</p>
+          <div class="service-grid">
+            <a class="service-card" href="#cntct">
+              <i class="fa-solid fa-brain"></i>
+              <h4>Generative AI Apps</h4>
+              <p>RAG pipelines over vector databases with Streamlit or FastAPI interfaces and MCP services.</p>
+              <span class="service-tags">Python &middot; RAG &middot; MCP &middot; FastAPI</span>
+            </a>
+            <a class="service-card" href="#cntct">
+              <i class="fa-solid fa-layer-group"></i>
+              <h4>Full-Stack Web Apps</h4>
+              <p>End-to-end applications with a React frontend, Spring Boot REST backend and MySQL.</p>
+              <span class="service-tags">React &middot; Spring Boot &middot; MySQL</span>
+            </a>
+            <a class="service-card" href="#cntct">
+              <i class="fa-solid fa-diagram-project"></i>
+              <h4>Backend APIs &amp; Microservices</h4>
+              <p>Clean REST APIs and service layers with Spring MVC, Spring Data JPA and JDBC.</p>
+              <span class="service-tags">Java &middot; Spring &middot; REST</span>
+            </a>
+            <a class="service-card" href="#cntct">
+              <i class="fa-solid fa-vial-circle-check"></i>
+              <h4>Test Automation</h4>
+              <p>UI and API test suites with WebdriverIO, Selenium, TestNG, Axios and Postman.</p>
+              <span class="service-tags">TypeScript &middot; WebdriverIO &middot; Postman</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="github-feed">
+          <h2>Latest on GitHub</h2>
+          <p class="ai-sub">Live from my public repositories.</p>
+          <div id="repo-grid" class="repo-grid" aria-live="polite">
+            <p class="repo-note">Loading repositories...</p>
+          </div>
+          <div class="cta-row">
+            <a class="cta-btn" href="https://github.com/Rajneesh-1234" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View all on GitHub</a>
+          </div>
+        </section>
+
+        <section id="ai-orbit">
+          <h2>My Generative AI Stack</h2>
+          <p class="ai-sub">Hover to slow the orbit, then click a technology to see where I use it.</p>
+          <div class="orbit-wrap">
+            <div class="orbit" id="orbit">
+              <div class="orbit-ring" aria-hidden="true"></div>
+              <div class="orbit-core"><i class="fa-solid fa-brain"></i><span>GenAI</span></div>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Python" data-desc="The main language behind my Generative AI applications at Siemens."><i class="fa-brands fa-python"></i><span>Python</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="RAG" data-desc="Retrieval-Augmented Generation over a vector database in CRISP AI and Personal AI Manager."><i class="fa-solid fa-book-open"></i><span>RAG</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Vector DB" data-desc="Stores document embeddings so the right context can be retrieved for each question."><i class="fa-solid fa-database"></i><span>Vector DB</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="FastAPI" data-desc="Backend framework for Personal AI Manager."><i class="fa-solid fa-bolt"></i><span>FastAPI</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Streamlit" data-desc="Interactive interface used in CRISP AI and Personal AI Manager."><i class="fa-solid fa-chart-line"></i><span>Streamlit</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="MCP" data-desc="Model Context Protocol service that Personal AI Manager uses to connect the model to tools."><i class="fa-solid fa-plug"></i><span>MCP</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="LLM apps" data-desc="Large language model powered applications, the focus of my current work at Siemens."><i class="fa-solid fa-comments"></i><span>LLMs</span></button>
+            </div>
+            <div class="orbit-detail" id="orbit-detail" aria-live="polite">
+              <h4>Select a technology</h4>
+              <p>Each item is part of the stack I use to build retrieval-based AI applications.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="stack-orbit">
+          <h2>My Full-Stack Orbit</h2>
+          <p class="ai-sub">The same idea for my application stack. It spins the other way, so try catching an item.</p>
+          <div class="orbit-wrap">
+            <div class="orbit" data-reverse="1" data-duration="44">
+              <div class="orbit-ring" aria-hidden="true"></div>
+              <div class="orbit-core"><i class="fa-brands fa-java"></i><span>Full-Stack</span></div>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Spring Boot" data-desc="Backend framework behind BlogHub, Online Voting, Swift Cart and Krishi Mandal."><i class="fa-solid fa-leaf"></i><span>Spring</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="React" data-desc="Frontend library for Swift Cart and Krishi Mandal."><i class="fa-brands fa-react"></i><span>React</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="MySQL" data-desc="Relational database for GadgetHub, BlogHub, Online Voting and Swift Cart."><i class="fa-solid fa-database"></i><span>MySQL</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="REST APIs" data-desc="Service layers built with Spring MVC and Spring Data JPA."><i class="fa-solid fa-network-wired"></i><span>REST</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Docker" data-desc="Containerization, listed in my tools and DevOps skills."><i class="fa-brands fa-docker"></i><span>Docker</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Git &amp; GitHub" data-desc="Version control for every project, with the code on GitHub."><i class="fa-brands fa-git-alt"></i><span>Git</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Test Automation" data-desc="WebdriverIO, Selenium, TestNG and Postman, used on the LIMS/ESP project at HCLTech."><i class="fa-solid fa-vial-circle-check"></i><span>Testing</span></button>
+              <button class="orbit-item" type="button" aria-pressed="false" data-title="Microservices" data-desc="Service-oriented architecture with Spring, part of my backend skillset."><i class="fa-solid fa-cubes"></i><span>Services</span></button>
+            </div>
+            <div class="orbit-detail" aria-live="polite">
+              <h4>Select a technology</h4>
+              <p>Each item is a tool I have used on real projects.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="neural">
+          <h2>Neural Network in Motion</h2>
+          <p class="ai-sub">My degree is in AI and Machine Learning. Fire a forward pass and watch the signal travel layer by layer. Weights are random, so this is an illustration only.</p>
+          <div class="ai-panel nn-panel">
+            <svg id="nn-svg" class="nn-svg" viewBox="0 0 800 340" role="img" aria-label="Animated neural network with four layers"></svg>
+            <div class="ai-actions nn-actions">
+              <button id="nn-fire" class="cta-btn" type="button"><i class="fa-solid fa-bolt"></i> Forward Pass</button>
+              <button id="nn-shuffle" class="cta-btn" type="button"><i class="fa-solid fa-shuffle"></i> Randomize Weights</button>
+            </div>
+            <p id="nn-status" class="rag-status" aria-live="polite">Press Forward Pass to send a signal through the network.</p>
+          </div>
+        </section>
+
+        <section id="semantic">
+          <h2>Semantic Skill Map</h2>
+          <p class="ai-sub">Related skills sit close together, like embeddings in a vector space. Search a skill and watch the query fly to its neighbours, or click any dot.</p>
+          <div class="ai-panel map-panel">
+            <form id="map-form" class="rag-form" autocomplete="off">
+              <input id="map-input" type="text" placeholder="Try: spring, rag, selenium, react..." aria-label="Search the skill map">
+              <button class="cta-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Find Neighbours</button>
+            </form>
+            <div class="rag-samples" aria-label="Sample searches">
+              <button type="button" class="rag-chip">rag</button>
+              <button type="button" class="rag-chip">spring</button>
+              <button type="button" class="rag-chip">selenium</button>
+              <button type="button" class="rag-chip">react</button>
+              <button type="button" class="rag-chip">mysql</button>
+            </div>
+            <svg id="map-svg" class="map-svg" viewBox="0 0 800 420" role="img" aria-label="Two-dimensional map of skills grouped by topic"></svg>
+            <div id="map-legend" class="map-legend" aria-hidden="true"></div>
+            <p id="map-status" class="rag-status" aria-live="polite">Pick a search above or click a dot.</p>
+          </div>
+        </section>
+
+        <section id="rag-lab">
+          <h2>RAG Pipeline Live Demo</h2>
+          <p class="ai-sub">Ask a question and watch it travel through a retrieval-augmented pipeline. This is an animated simulation over my portfolio facts, not a live language model.</p>
+          <div class="ai-panel rag-panel">
+            <form id="rag-form" class="rag-form" autocomplete="off">
+              <input id="rag-input" type="text" placeholder="Ask something about Rajneesh..." aria-label="Question for the RAG demo">
+              <button id="rag-run" class="cta-btn" type="submit"><i class="fa-solid fa-play"></i> Run Pipeline</button>
+            </form>
+            <div class="rag-samples" aria-label="Sample questions">
+              <button type="button" class="rag-chip">How does he use RAG and vector databases?</button>
+              <button type="button" class="rag-chip">What does he do at Siemens with MCP?</button>
+              <button type="button" class="rag-chip">What is his education and CGPA?</button>
+              <button type="button" class="rag-chip">Which test automation tools does he use?</button>
+            </div>
+            <div class="rag-flow" aria-hidden="true">
+              <div class="rag-node"><i class="fa-solid fa-comment-dots"></i><span>Question</span></div>
+              <div class="rag-link"><span class="rag-dot"></span></div>
+              <div class="rag-node"><i class="fa-solid fa-vector-square"></i><span>Embed</span></div>
+              <div class="rag-link"><span class="rag-dot"></span></div>
+              <div class="rag-node"><i class="fa-solid fa-database"></i><span>Vector DB</span></div>
+              <div class="rag-link"><span class="rag-dot"></span></div>
+              <div class="rag-node"><i class="fa-solid fa-layer-group"></i><span>Context</span></div>
+              <div class="rag-link"><span class="rag-dot"></span></div>
+              <div class="rag-node"><i class="fa-solid fa-wand-magic-sparkles"></i><span>LLM</span></div>
+            </div>
+            <p id="rag-status" class="rag-status" aria-live="polite">Pick a sample question or type your own, then run the pipeline.</p>
+            <div id="rag-docs" class="rag-docs"></div>
+            <div id="rag-answer" class="pitch-output rag-answer" hidden></div>
+          </div>
+        </section>
+
+        <section id="ai-lab">
+          <h2>AI Job Fit Analyzer</h2>
+          <p class="ai-sub">Paste a job description to see how well my skills match. Analysis runs entirely in your browser.</p>
+          <div class="ai-panel">
+            <textarea id="jd-input" rows="6" placeholder="Paste a job description here..." aria-label="Job description"></textarea>
+            <div class="ai-actions">
+              <button id="jd-analyze" class="cta-btn" type="button"><i class="fa-solid fa-wand-magic-sparkles"></i> Analyze Fit</button>
+              <button id="jd-sample" class="cta-btn" type="button"><i class="fa-solid fa-file-lines"></i> Try Sample</button>
+            </div>
+            <div id="jd-result" hidden>
+              <div class="jd-gauge">
+                <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="gauge-bg" cx="60" cy="60" r="54"></circle>
+                  <circle class="gauge-fg" id="gauge-fg" cx="60" cy="60" r="54"></circle>
+                </svg>
+                <div class="gauge-value"><span id="gauge-num">0</span>%</div>
+              </div>
+              <div class="jd-details">
+                <h4 id="jd-verdict"></h4>
+                <div class="jd-label">Matching skills</div>
+                <div id="jd-matched" class="chips"></div>
+                <div class="jd-label">Skills to explore</div>
+                <div id="jd-gaps" class="chips"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-panel pitch-panel">
+            <h3 class="ai-h3"><i class="fa-solid fa-pen-nib"></i> AI Pitch Generator</h3>
+            <p class="ai-sub">Enter a company and role to get a tailored introduction. If you analyzed a job description above, its keywords are used.</p>
+            <div class="pitch-fields">
+              <input id="pitch-company" type="text" placeholder="Company (e.g. Acme Technologies)" aria-label="Company">
+              <input id="pitch-role" type="text" placeholder="Role (e.g. Java Backend Developer)" aria-label="Role">
+            </div>
+            <div class="ai-actions">
+              <button id="pitch-generate" class="cta-btn" type="button"><i class="fa-solid fa-bolt"></i> Generate Pitch</button>
+              <button id="pitch-copy" class="cta-btn" type="button" hidden><i class="fa-solid fa-copy"></i> Copy</button>
+            </div>
+            <div id="pitch-output" class="pitch-output" hidden></div>
+          </div>
+        </section>
+
+         <section id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <details>
+              <summary>What is your current role?</summary>
+              <p>I am building Generative AI applications at Siemens, namely CRISP AI and Personal AI Manager, using Python, RAG and vector databases.</p>
+            </details>
+            <details>
+              <summary>Which technologies do you work with?</summary>
+              <p>Java, Spring Boot, React, JavaScript, TypeScript, Python, MySQL, and automation tools such as WebdriverIO, Selenium and Postman. See the Skillset section for the full list.</p>
+            </details>
+            <details>
+              <summary>Do you have experience with AI?</summary>
+              <p>Yes. I hold a B.Tech in Artificial Intelligence and Machine Learning, built an AI integration for HireSense during my internship, and work on RAG and MCP projects at Siemens.</p>
+            </details>
+            <details>
+              <summary>How can I contact you?</summary>
+              <p>Use the Contact form, email rajnishkushwaha3757@gmail.com, or message me on LinkedIn. The footer has a one-click copy for the email address.</p>
+            </details>
+          </div>
+        </section>
+
          <section id="prjct"></section>
          <br><br><br>
         
@@ -499,7 +1140,7 @@
               <div class="title"><h2 style="font-size: 35px;">Projects</h2></div>
               <div class="boxes row">
 
-                  <div class="box col-md-5 col-11">
+                  <div class="box col-md-5 col-11" data-project-category="fullstack">
                         <div class="icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
@@ -523,10 +1164,10 @@
                           </div>
                         </p>
                         <div class="box-icon">
-                            <a href="https://rohan-samuel-portfolio.netlify.app/" target="_blank">
+                            <a href="https://rajneesh-kushwaha-portfolio.netlify.app/" target="_blank">
                                 <img src="Social/Chrome.png" alt="Chrome">
                          </a>
-                            <a href="https://github.com/ROHANSAMUEL134/Responsive-Portfolio" target="_blank">
+                            <a href="https://github.com/Rajneesh-1234/Rajneesh-kushwaha-portfolio" target="_blank">
                                 <img src="Social/Github-B.png" alt="Github">
                             </a>
                         </div>
@@ -1005,45 +1646,77 @@
               <h1>Interested in working together ? let's talk</h1>
             </div>
             <div
-              class="col-lg-8 aos-init"
+              class="col-lg-11 aos-init"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <form action="#" class="row g-lg-3 gy-3">
-                <div class="form-group col-md-6">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter your name..."
-                  />
+              <div class="cf-card">
+                <div class="cf-panel">
+                  <form id="contact-form" novalidate>
+                    <input type="text" name="_honey" class="cf-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="cf-grid">
+                      <label class="cf-field">
+                        <span class="cf-label">Full name *</span>
+                        <span class="cf-input"><i class="fa-solid fa-user"></i><input type="text" name="name" maxlength="80" placeholder="Your name" autocomplete="name"></span>
+                        <small class="cf-error"></small>
+                      </label>
+                      <label class="cf-field">
+                        <span class="cf-label">Email *</span>
+                        <span class="cf-input"><i class="fa-solid fa-envelope"></i><input type="email" name="email" maxlength="120" placeholder="you@example.com" autocomplete="email"></span>
+                        <small class="cf-error"></small>
+                      </label>
+                      <label class="cf-field">
+                        <span class="cf-label">Phone (optional)</span>
+                        <span class="cf-input"><i class="fa-solid fa-phone"></i><input type="tel" name="phone" maxlength="20" placeholder="+91 98765 43210" autocomplete="tel"></span>
+                        <small class="cf-error"></small>
+                      </label>
+                      <label class="cf-field">
+                        <span class="cf-label">Company (optional)</span>
+                        <span class="cf-input"><i class="fa-solid fa-building"></i><input type="text" name="company" maxlength="80" placeholder="Your company" autocomplete="organization"></span>
+                        <small class="cf-error"></small>
+                      </label>
+                      <label class="cf-field cf-wide">
+                        <span class="cf-label">I'm reaching out about</span>
+                        <span class="cf-input">
+                          <i class="fa-solid fa-tag"></i>
+                          <select name="inquiry_type">
+                            <option>Job opportunity</option>
+                            <option>Freelance / project work</option>
+                            <option>Collaboration</option>
+                            <option>Mentorship / guidance</option>
+                            <option>Something else</option>
+                          </select>
+                        </span>
+                      </label>
+                      <label class="cf-field cf-wide">
+                        <span class="cf-label">Subject *</span>
+                        <span class="cf-input"><i class="fa-solid fa-pen"></i><input type="text" name="subject" maxlength="120" placeholder="What is this about?"></span>
+                        <small class="cf-error"></small>
+                      </label>
+                      <label class="cf-field cf-wide">
+                        <span class="cf-label">Message * <em class="cf-count">0 / 1000</em></span>
+                        <span class="cf-input cf-area"><textarea name="message" rows="5" maxlength="1000" placeholder="Tell me about the role or project..."></textarea></span>
+                        <small class="cf-error"></small>
+                      </label>
+                    </div>
+                    <button type="submit" class="cf-submit">
+                      <span class="cf-btn-label"><i class="fa-solid fa-paper-plane"></i> Send message</span>
+                      <span class="cf-spinner" aria-hidden="true"></span>
+                    </button>
+                    <div class="cf-status" role="status" aria-live="polite"></div>
+                  </form>
+
+                  <div class="cf-success" hidden>
+                    <svg class="cf-check" viewBox="0 0 52 52" aria-hidden="true">
+                      <circle cx="26" cy="26" r="24"></circle>
+                      <path d="M14 27 l8 8 l16 -17"></path>
+                    </svg>
+                    <h3>Message sent!</h3>
+                    <div class="cf-lead" id="cf-success-text"></div>
+                    <button type="button" class="cf-submit cf-again">Send another message</button>
+                  </div>
                 </div>
-                <div class="form-group col-md-6">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Enter your email..."
-                  />
-                </div>
-                <div class="form-group col-12">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter subject..."
-                  />
-                </div>
-                <div class="form-group col-12">
-                  <textarea
-                    rows="4"
-                    class="form-control"
-                    placeholder="Enter your messsage..."
-                  ></textarea>
-                </div>
-                <div class="form-group col-12 d-grid">
-                  <button type="submit" class="btn btn-brand">
-                    Contact me
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -1066,16 +1739,39 @@
                         <img src="Social/Github.png" alt="Github">
                     </a>
             </div>
+            <div class="cta-row share-row">
+                <a class="cta-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frajneesh-kushwaha-portfolio.netlify.app%2F" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i> Share on LinkedIn
+                </a>
+            </div>
 
         </section>
     </main><br><br>
     <div class="footer-container">
         <footer>
         <p id="footer-text">&copy; 2025 All rights reserved by Rajneesh Kushwaha. </p>
+        <div class="footer-actions">
+          <a class="footer-icon" href="https://www.linkedin.com/in/rajneesh-kushwaha-02a787276" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="footer-icon" href="https://github.com/Rajneesh-1234" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <button class="footer-icon" id="footer-copy-email" type="button" aria-label="Copy email address" title="Copy email"><i class="fa-solid fa-envelope"></i></button>
+          <button class="footer-icon" id="footer-top" type="button" aria-label="Back to top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+          <span id="footer-status" class="footer-status" aria-live="polite"></span>
+        </div>
         </footer>
     </div>
   </div>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
   <script src="Script/script.js"></script>
+  <script src="Script/animations.js"></script>
+  <script src="Script/features.js"></script>
+  <script src="Script/ai-lab.js"></script>
+  <script src="Script/ai-extra.js"></script>
+  <script src="Script/contact.js"></script>
 </body>
 </html>
 
