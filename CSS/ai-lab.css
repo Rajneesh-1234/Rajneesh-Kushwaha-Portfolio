@@ -522,3 +522,144 @@
     font-size: 16px;
   }
 }
+
+/* Skillset boxes: skills orbit inside the same box */
+.skills.is-orbit {
+  position: relative;
+  display: block;
+  height: 400px;
+  min-height: 400px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.skills.is-orbit .skill-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.skills.is-orbit .skill-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.skills.is-orbit .skill-lines line {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+}
+
+.skills.is-orbit .skill-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  margin: -48px 0 0 -48px;
+  padding: 6px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+  box-shadow: 0 0 30px var(--accent), 0 0 50px rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.skills.is-orbit .skill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 78px;
+  height: 78px;
+  min-height: 0;
+  margin: -39px 0 0 -39px;
+  padding: 4px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: rgba(5, 12, 20, 0.92);
+  text-align: center;
+  animation: none;
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+.skills.is-orbit .skill:hover {
+  background: var(--accent);
+  box-shadow: 0 0 20px #fff;
+  z-index: 2;
+}
+
+.skills.is-orbit .skill img,
+.skills.is-orbit .skill .skill-icon {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  object-fit: contain;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.skills.is-orbit .skill img.skill-img-bg {
+  padding: 2px;
+}
+
+.skills.is-orbit .skill p {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  transform: none;
+}
+
+@media (max-width: 575.98px) {
+  .skills.is-orbit {
+    height: 340px;
+    min-height: 340px;
+    width: 100%;
+  }
+
+  .skills.is-orbit .skill {
+    width: 62px;
+    height: 62px;
+    margin: -31px 0 0 -31px;
+  }
+
+  .skills.is-orbit .skill img,
+  .skills.is-orbit .skill .skill-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .skills.is-orbit .skill p {
+    font-size: 8px;
+  }
+
+  .skills.is-orbit .skill-core {
+    width: 76px;
+    height: 76px;
+    margin: -38px 0 0 -38px;
+    font-size: 12px;
+  }
+}

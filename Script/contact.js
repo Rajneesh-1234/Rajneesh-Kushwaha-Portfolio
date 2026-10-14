@@ -58,11 +58,11 @@
     if (animate) gsap.from(success.children, { y: 20, opacity: 0, duration: 0.5, stagger: 0.12, ease: "power3.out" });
   }
 
-  function showError(payload) {
+  function showError(payload, reason) {
     const body = encodeURIComponent(payload.message + "\n\n" + payload.name + " (" + payload.email + ")");
     status.className = "cf-status error";
     status.innerHTML =
-      'Could not send right now. Please try again, or <a href="mailto:' + MY_EMAIL + "?subject=" +
+      (reason || "Could not send right now. Please try again, or") + ' <a href="mailto:' + MY_EMAIL + "?subject=" +
       encodeURIComponent(payload.subject) + "&body=" + body + '">email me directly</a>.';
     if (animate) gsap.from(status, { y: 8, opacity: 0, duration: 0.4 });
   }
@@ -117,6 +117,12 @@
         "Hi " + name + ", thank you for contacting Rajneesh Kushwaha. Your message has been received and he will get back to you soon. - Rajneesh Kushwaha (Full-Stack Java Developer)",
     };
 
+    // FormSubmit rejects requests from file:// pages, so the form needs http(s)
+    if (location.protocol === "file:") {
+      showError(payload, "This page is opened from a file, so the form cannot send. Run it on a local server or the live site, or");
+      return;
+    }
+
     setLoading(true);
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20000);
@@ -128,7 +134,10 @@
         signal: controller.signal,
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok || result.success === false || result.success === "false") throw new Error(result.message || "Request failed");
+      if (!response.ok || result.success === false || result.success === "false") {
+        console.error("Contact form: " + (result.message || response.status));
+        throw new Error(result.message || "Request failed");
+      }
       showSuccess(payload.name);
       form.reset();
       counter.textContent = "0 / 1000";

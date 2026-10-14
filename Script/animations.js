@@ -1,4 +1,4 @@
-// Animations: AOS (scroll reveal), GSAP + ScrollTrigger, Typed.js and VanillaTilt
+﻿// Animations: GSAP + ScrollTrigger, Typed.js and VanillaTilt (scroll reveal lives in reveal.js)
 (function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -18,52 +18,6 @@
   $$(".skills").forEach((group) => {
     group.querySelectorAll(".skill").forEach((skill, i) => skill.style.setProperty("--i", i));
   });
-
-  // AOS scroll reveal
-  if (typeof AOS !== "undefined" && !reduceMotion) {
-    const DURATION = 800;
-    const reveal = [
-      [".themeDiv", "fade-down"],
-      ["#about > p", "fade-up"],
-      [".stat", "flip-up"],
-      [".tl-item", "fade-right"],
-      [".skillset-topic", "fade-down"],
-      [".skills", "zoom-in-up"],
-      [".achievements", "zoom-in"],
-      [".coding .code", "flip-left"],
-      [".project .title", "fade-down"],
-      ["#featured .box", "zoom-in-up"],
-      ["#projects .box", "fade-up"],
-      [".service-card", "zoom-in-up"],
-      ["#faq details", "fade-up"],
-      [".social", "fade-up"],
-    ];
-    reveal.forEach(([selector, animation]) => {
-      $$(selector).forEach((el) => {
-        const index = Array.prototype.indexOf.call(el.parentElement.children, el);
-        el.setAttribute("data-aos", animation);
-        el.setAttribute("data-aos-delay", (index % 3) * 120);
-      });
-    });
-
-    AOS.init({ duration: DURATION, easing: "ease-out-cubic", once: true, offset: 80 });
-
-    // Drop AOS styles after the reveal so hover/tilt transforms and transitions are not overridden
-    document.addEventListener("aos:in", (event) => {
-      const el = event.detail;
-      if (!(el instanceof Element)) return;
-      if (el.matches(".skills")) el.classList.add("in-view");
-      const delay = parseInt(el.getAttribute("data-aos-delay"), 10) || 0;
-      setTimeout(() => {
-        Array.from(el.attributes)
-          .filter((attr) => attr.name.indexOf("data-aos") === 0)
-          .forEach((attr) => el.removeAttribute(attr.name));
-        el.classList.remove("aos-init", "aos-animate");
-      }, DURATION + delay + 150);
-    });
-  } else {
-    $$(".skills").forEach((el) => el.classList.add("in-view"));
-  }
 
   // Typed.js role line
   if (typeof Typed !== "undefined" && !reduceMotion) {
